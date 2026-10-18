@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply font-sans text-ink bg-offwhite antialiased;
+    font-size: 18px;
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-ink;
+    line-height: 1.15;
+  }
+  ::selection {
+    @apply bg-primary/20 text-forest;
+  }
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full font-sans font-bold
+      transition-all duration-300 focus:outline-none focus-visible:ring-4
+      focus-visible:ring-primary/40 text-[17px] md:text-lg px-7 py-3.5;
+  }
+  .btn-primary {
+    @apply btn bg-primary text-white shadow-card hover:bg-forest hover:shadow-card-hover hover:-translate-y-0.5;
+  }
+  .btn-light {
+    @apply btn bg-white text-forest shadow-card hover:bg-mint hover:shadow-card-hover hover:-translate-y-0.5;
+  }
+  .btn-outline {
+    @apply btn border-2 border-forest text-forest hover:bg-forest hover:text-white hover:-translate-y-0.5;
+  }
+  .section-eyebrow {
+    @apply inline-block rounded-full bg-mint px-4 py-1.5 text-sm font-bold uppercase tracking-widest text-primary;
+  }
+  .section-title {
+    @apply mt-4 text-3xl font-semibold leading-tight sm:text-4xl lg:text-[44px];
+  }
+  .section-sub {
+    @apply mt-4 max-w-2xl text-lg text-ink/70 md:text-xl;
+  }
+}
